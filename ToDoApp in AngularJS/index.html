@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="directives.js"></script>
+    <script src="services.js"></script>
+  </head>
+
+  <body ng-app="todo" ng-controller="TodoCtrl">
+    <div class="container">
+      <todo-title></todo-title>
+
+      <todo-form></todo-form>
+
+      <ul class="list-unstyled">
+        <li ng-repeat="todo in todos | filter: statusFilter">
+          <!-- /input-group -->
+          <todo-item></todo-item>
+        </li>
+      </ul>
+
+      <todo-filters></todo-filters>
+    </div>
+  </body>
+</html>
